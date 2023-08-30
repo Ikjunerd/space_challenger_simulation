@@ -1,0 +1,87 @@
+<?xml version="1.0" ?>
+<robot name="tram" xmlns:xacro="https://www.ros.org/wiki/xacro">
+
+    <xacro:include filename="$(find space_challenger_simulation)/models/tram/materials.xacro" />
+    
+    <link name="body">
+        <visual>
+            <origin rpy="0.0 0 0" xyz="0 0 0"/>
+            <geometry>
+                <mesh filename="package://space_challenger_simulation/meshes/tram_body.stl" scale="0.001 0.001 0.001"/>
+               
+            </geometry>
+             <material name="red" />
+        </visual>
+        <collision>
+            <origin rpy="0 0 0" xyz="0 0 0" />
+            <geometry>
+                <mesh filename="package://space_challenger_simulation/meshes/tram_body.stl" scale="0.001 0.001 0.001"/>
+            </geometry>
+        </collision>
+    <inertial>
+      <origin xyz="0.3 0.3 0.1" rpy="0 0 0"/>
+      <mass value="5"/>
+      <inertia ixx="1.0e-02" ixy="1.0e-02" ixz="1.0e-02" 
+               iyx="0.0" iyy="1.0e-02" iyz="1.0e-02" 
+               izx="0.0" izy="0.0" izz="1.0e-02" />
+    </inertial>
+    </link>
+
+    
+  <gazebo reference="body"> <!-- reference to a existing "link" -->
+    <!-- NOTE: use Gazebo/DepthMap to take color from mesh (.dae only) -->
+    <material>Gazebo/Orange</material>
+    <mu1>0.2</mu1>
+    <mu2>0.2</mu2>
+    <selfCollide>True</selfCollide>
+  </gazebo>
+
+
+
+<gazebo>
+      <!--plugin name="gazebo_ros_control" filename="libgazebo_ros_control.so">
+          <robotNamespace>/simple_tracked</robotNamespace>
+          <robotSimType>gazebo_ros_control/DefaultRobotHWSim</robotSimType>
+      </plugin-->
+
+        <!--plugin filename="libKeysToCmdVelPlugin.so" name="keyboard_control">
+          <publish_as_twist>true</publish_as_twist>
+          <cmd_vel_topic>~/simple_tracked/cmd_vel_twist</cmd_vel_topic>
+      </plugin-->
+
+          <!--plugin filename="libSpaceChallengerPlugin.so" name="simple_tracked_vehicle">
+          <body>base_link</body>
+          <left_track>left_track</left_track>
+          <right_track>right_track</right_track>
+          <left_flipper>front_left_flipper</left_flipper>
+          <left_flipper>rear_left_flipper</left_flipper>
+          <right_flipper>front_right_flipper</right_flipper>
+          <right_flipper>rear_right_flipper</right_flipper>
+          <track_mu>2</track_mu>
+          <track_mu2>0.5</track_mu2>
+      </plugin-->
+</gazebo>
+
+    <!--transmission name="tran1">
+          <type>transmission_interface/SimpleTransmission</type>
+          <joint name="front_left_flipper_j">
+          <hardwareInterface>hardware_interface/PositionJointInterface</hardwareInterface>
+          </joint>
+          <actuator name="motor1">
+          <hardwareInterface>hardware_interface/PositionJointInterface</hardwareInterface>
+          <mechanicalReduction>1</mechanicalReduction>
+          </actuator>
+      </transmission>
+
+      <transmission name="tran2">
+          <type>transmission_interface/SimpleTransmission</type>
+          <joint name="front_right_flipper_j">
+          <hardwareInterface>hardware_interface/PositionJointInterface</hardwareInterface>
+          </joint>
+          <actuator name="motor2">
+          <hardwareInterface>hardware_interface/PositionJointInterface</hardwareInterface>
+          <mechanicalReduction>1</mechanicalReduction>
+          </actuator>
+      </transmission-->
+
+</robot>

@@ -1,0 +1,32 @@
+{
+  "configurations": [
+    {
+      "browse": {
+        "databaseFilename": "${default}",
+        "limitSymbolsToIncludedHeaders": false
+      },
+      "includePath": [
+        "/home/surplusz/dev/catkin_ws/devel/include/**",
+        "/opt/ros/melodic/include/**",
+        "/home/surplusz/dev/catkin_ws/src/DynamixelSDK/ros/dynamixel_sdk/include/**",
+        "/home/surplusz/dev/catkin_ws/src/dynamixel-workbench/dynamixel_workbench_controllers/include/**",
+        "/home/surplusz/dev/catkin_ws/src/dynamixel-workbench/dynamixel_workbench_operators/include/**",
+        "/home/surplusz/dev/catkin_ws/src/dynamixel-workbench/dynamixel_workbench_toolbox/include/**",
+        "/home/surplusz/dev/catkin_ws/src/gazebo_continuous_track/include/**",
+        "/home/surplusz/dev/catkin_ws/src/open_manipulator_p/open_manipulator_p_control_gui/include/**",
+        "/home/surplusz/dev/catkin_ws/src/open_manipulator_p/open_manipulator_p_controller/include/**",
+        "/home/surplusz/dev/catkin_ws/src/open_manipulator_p/open_manipulator_p_libs/include/**",
+        "/home/surplusz/dev/catkin_ws/src/open_manipulator_p/open_manipulator_p_teleop/include/**",
+        "/home/surplusz/dev/catkin_ws/src/robotis_manipulator/include/**",
+        "/home/surplusz/dev/catkin_ws/src/space_challenger_simulation/include/**",
+        "/usr/include/**"
+      ],
+      "name": "ROS",
+      "intelliSenseMode": "gcc-x64",
+      "compilerPath": "/usr/bin/gcc",
+      "cStandard": "gnu11",
+      "cppStandard": "c++14"
+    }
+  ],
+  "version": 4
+}
